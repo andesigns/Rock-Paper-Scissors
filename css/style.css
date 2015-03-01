@@ -1,0 +1,8 @@
+/* STYLE.CSS */
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: #fff;
+}
+h1, h2, h3, h4, h5, h6, label, p {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
