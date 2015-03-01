@@ -4,7 +4,7 @@ body {
 	font-family: 'Lato', sans-serif;
 	background-color: #fff;
 }
-h1, h2, h3, h4, h5, h6, label, p {
+h1, h2, h3, h4, h5, h6, label, p, li {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .btn-primary {
@@ -14,6 +14,15 @@ h1, h2, h3, h4, h5, h6, label, p {
 .btn-primary:hover {
 	background-color:#16938e;
 	border-color: transparent;
+}
+.modal-content {
+	background-color: rgba(255,255,255,.7);
+}
+.modal-content .modal-header .modal-title {
+	font-size: 2em;
+}
+.modal-content .modal-body p, .modal-content .modal-body li {
+	font-size: 1.5em;
 }
 
 /* HEADER */
@@ -69,6 +78,13 @@ header h1 {
 .welcome h2 small {
 	font-weight: 300;
 	color: #fff;
+}
+.welcome h3 {
+	font-weight: 300;
+	color: white;
+}
+.welcome h3 a {
+	color: white;
 }
 .welcome .results {
 	padding: 25px 0;

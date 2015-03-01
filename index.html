@@ -25,7 +25,7 @@
     </header>
     <div class="get-name">
       <div class="container">
-        <form class="get-name-form" ng-show="playerName === ''" ng-submit="addName(playersName)">
+        <form class="get-name-form" ng-hide="playerName" ng-submit="addName(playersName)">
           <div class="form-group">
             <label>What's your name?</label>
             <input type="text" class="form-control" ng-model="playersName" placeholder="Player's Name">
@@ -34,7 +34,8 @@
         </form>
         <div class="welcome" ng-show="playerName">
           <h2 class="text-center" ng-hide="result">Hi, {{playerName}}!<br/><small ng-hide="result">{{description}}</small></h2>
-          <div class="results" ng-show="result" >
+          <h3 class="text-center">Don't know the rules? <a href="" data-toggle="modal" data-target="#myModal">Click Here!</a></h3>
+          <div class="results" ng-show="result">
             <p class="text-center">
               {{playerName}} picked {{usersChoice}}<br/>
               Computer picked {{computersChoice}}
@@ -45,12 +46,32 @@
         </div>
       </div>
     </div>
-    <div class="rock-paper-scissors" ng-hide="playerName === ''">
+    <div class="rock-paper-scissors" ng-show="playerName">
       <ul>
         <li ng-repeat="choice in choices">
           <button ng-click='addChoice(choice.name)'><span class="front face"><img ng-src="{{choice.image}}" alt="{{choice.name}}"></span><span class="back face">{{choice.name}}</span></button>
         </li>
       </ul>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Rock, Paper, Scissors Rules</h4>
+          </div>
+          <div class="modal-body">
+            <p>The rules are simple:</p>
+            <ul>
+              <li>Rock beats Scissors</li>
+              <li>Scissors beats Paper</li>
+              <li>Paper beats Rock</li>
+            </ul>
+            <p>That's it! Have fun!</p>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
