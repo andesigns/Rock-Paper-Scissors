@@ -39,13 +39,24 @@ header h1 {
 /* GET NAME */
 .get-name {
 	background: #FF803E;
+	min-height: 225px;
 }
 .get-name-form {
 	margin: 30px auto;
-	padding: 10px;
 	max-width: 500px;
-	background-color: #FF803E;
-	border-radius: 5px;
+	-webkit-transition: all linear 0.2s;
+  -moz-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  line-height: 20px;
+  opacity: 1;
+  position: relative;
+  top: 0;
+}
+.get-name-form.ng-hide {
+	line-height: 0;
+  opacity: 0;
+  position: relative;
+  top: -40px;
 }
 .get-name-form .form-group {
 	text-align: center;
@@ -62,11 +73,20 @@ header h1 {
 
 /* WELCOME */
 .welcome {
-	margin-top: 30px;
-	margin-bottom: 30px;
-	padding: 10px;
-	background-color: #FF803E;
-	border-radius: 5px;
+	margin: 30px auto;
+	-webkit-transition: all linear 0.5s;
+	-moz-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  line-height: 20px;
+  opacity: 1;
+  position: relative;
+  top: 0;
+}
+.welcome.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  position: relative;
+  top: 40px;
 }
 .welcome h2 {
 	margin-top: 0;
@@ -94,11 +114,20 @@ header h1 {
 .welcome p {
 	font-size: 2em;
 	color: white;
+	line-height: 1.2em;
 }
 
 /* ROCK PAPER SCISSORS */
 .rock-paper-scissors {
-
+	-webkit-transition: all linear 0.5s;
+	-moz-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  line-height: 20px;
+  opacity: 1;
+}
+.rock-paper.scissors.ng-hide {
+	line-height: 0;
+  opacity: 0;
 }
 .rock-paper-scissors ul {
 	margin: 0;

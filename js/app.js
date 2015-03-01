@@ -1,14 +1,11 @@
 (function() {
-	var app = angular.module('rockPaperScissorsApp', []);
+	var app = angular.module('rockPaperScissorsApp', ['ngAnimate']);
 
 	app.controller('rockPaperScissorsCtrl', ['$scope', function ($scope) {
 		
 		// Title and Description
 		$scope.title = 'Rock Paper Scissors';
 		$scope.description = 'Take your pick...Rock, Paper or Scissors';
-
-		// Player Name
-		$scope.playerName = "";
 
 		// Assign players name
 		$scope.addName = function(text) {
