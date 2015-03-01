@@ -1,8 +1,29 @@
 /* STYLE.CSS */
+
+/* GENERAL STYLING */
 body {
 	font-family: 'Lato', sans-serif;
 	background-color: #fff;
 }
 h1, h2, h3, h4, h5, h6, label, p {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.btn-primary {
+	background-color: #19B2AB;
+	border-color: transparent;
+}
+.btn-primary:hover {
+	background-color:#16938e;
+	border-color: transparent;
+}
+
+/* HEADER */
+header {
+	background-color: #19B2AB;
+	border-top: 20px solid #3EFFF5;
+	border-bottom: 2px solid #FF803E;
+}
+header h1 {
+	font-size: 4em;
+	color: #fff;
 }
