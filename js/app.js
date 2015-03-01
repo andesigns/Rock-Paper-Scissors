@@ -67,10 +67,11 @@
 
 		// Start again
 		$scope.startAgain = function() {
-			$scope.playersName = "";
-			$scope.playerName = "";
+			// $scope.playersName = "";
+			// $scope.playerName = "";
 			$scope.usersChoice = "";
 			$scope.computersChoice = "";
+			$scope.result = "";
 		}
 
 	}]);
