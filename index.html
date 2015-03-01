@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rock Paper Scissors</title>
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Yanone+Kaffeesatz:400,300,200,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
@@ -20,63 +19,43 @@
   <body ng-controller="rockPaperScissorsCtrl">
     <header>
       <div class="container">
-        <h1 class="text-center"><img src="img/logo.png" alt="Rock Paper Scissors"><br/>Rock Paper Scissors</h1>
+        <p class="text-center"></p>
+        <h1 class="text-center"><img src="img/logo.png" alt="Rock Paper Scissors" class=""><br/>{{title}}</h1>
       </div>
     </header>
-    <!-- Information Board -->
-    <div class="information-board">
+    <div class="get-name">
       <div class="container">
-        <!-- Get player's name -->
-        <form class="get-name-form">
-          <div class="form-group text-center">
+        <form class="get-name-form" ng-show="playerName === ''" ng-submit="addName(playersName)">
+          <div class="form-group">
             <label>What's your name?</label>
-            <input type="text" class="form-control" placeholder="Player's Name">
+            <input type="text" class="form-control" ng-model="playersName" placeholder="Player's Name">
           </div>
           <button class="btn btn-primary btn-block" type="submit">GO</button>
-
         </form>
-        <!-- Player's istructions -->
-        <div class="welcome">
-          <h2 class="text-center">Hi, Mr Bloggs<br/><small>Pick your choice...Rock, Paper or Scissors</small></h2>
-          <div class="results">
+        <div class="welcome" ng-show="playerName">
+          <h2 class="text-center" ng-hide="result">Hi, {{playerName}}!<br/><small ng-hide="result">{{description}}</small></h2>
+          <div class="results" ng-show="result" >
             <p class="text-center">
-              Mr Bloggs picked Rock, Paper or Scissors<br/>
-              The Computer picked Rock, Paper or Scissors
+              {{playerName}} picked {{usersChoice}}<br/>
+              Computer picked {{computersChoice}}
             </p>
-            <h1 class="text-center">YOU WIN or YOU LOSE or IT'S A DRAW</h1>
-            <p class="text-center"><button class="btn btn-primary">Play Again</button></p>
+            <h2 class="text-center">{{result}}</h2>
+            <p class="text-center"><button class="btn btn-primary" ng-click="startAgain()">Play again</button></p>
           </div>
         </div>
       </div>
     </div>
-    <!-- Rock, Paper or Scissors -->
-    <div class="rock-paper-scissors">
+    <div class="rock-paper-scissors" ng-hide="playerName === ''">
       <ul>
-        <li>
-          <button>
-            <span class="front face"><img src="img/rock.png" alt="Rock"></span>
-            <span class="back face">Rock</span>
-          </button>
-        </li>
-        <li>
-          <button>
-            <span class="front face"><img src="img/paper.png" alt="Paper"></span>
-            <span class="back face">Paper</span>
-          </button>
-        </li>
-        <li>
-          <button>
-            <span class="front face"><img src="img/scissors.png" alt="Scissors"></span>
-            <span class="back face">Scissors</span>
-          </button>
+        <li ng-repeat="choice in choices">
+          <button ng-click='addChoice(choice.name)'><span class="front face"><img ng-src="{{choice.image}}" alt="{{choice.name}}"></span><span class="back face">{{choice.name}}</span></button>
         </li>
       </ul>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

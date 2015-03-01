@@ -1,15 +1,11 @@
-/* STYLE.CSS */
+/* --- STYLE.CSS --- */
 
-/* GENERAL STYLING */
 body {
 	font-family: 'Lato', sans-serif;
 	background-color: #fff;
 }
-h1, h2, h3, h4, h5, h6, label, p, small {
-	font-weight: 300;
+h1, h2, h3, h4, h5, h6, label, p {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
-	text-transform: uppercase;
-	color: white;
 }
 .btn-primary {
 	background-color: #19B2AB;
@@ -31,39 +27,56 @@ header h1 {
 	color: #fff;
 }
 
-/* INFO BOARD */
-.information-board {
+/* GET NAME */
+.get-name {
 	background: #FF803E;
 }
-.information-board .get-name-form {
+.get-name-form {
 	margin: 30px auto;
 	padding: 10px;
 	max-width: 500px;
+	background-color: #FF803E;
+	border-radius: 5px;
 }
-.information-board .get-name-form label {
-	font-size: 2em;
-}
-.information-board .get-name-form input[type=text] {
+.get-name-form .form-group {
 	text-align: center;
 }
-.information-board .welcome {
-	margin: 30px auto;
+.get-name-form label {
+	font-size: 2em;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: #fff;
+}
+.get-name-form input[type=text] {
+	text-align: center;
+}
+
+/* WELCOME */
+.welcome {
+	margin-top: 30px;
+	margin-bottom: 30px;
 	padding: 10px;
+	background-color: #FF803E;
+	border-radius: 5px;
 }
-.information-board .welcome h2 {
+.welcome h2 {
+	margin-top: 0;
 	font-size: 3em;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: #fff;
 }
-.information-board .welcome h2 small {
+.welcome h2 small {
 	font-weight: 300;
 	color: #fff;
 }
-.information-board .welcome .results {
+.welcome .results {
 	padding: 25px 0;
 	background-color: rgba(255,255,255,.2);
 	border-radius: 5px;
 }
-.information-board .welcome .results p {
-	font-size: 1.5em;
+.welcome p {
+	font-size: 2em;
 	color: white;
 }
 
