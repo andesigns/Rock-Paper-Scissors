@@ -39,7 +39,6 @@ header h1 {
 /* GET NAME */
 .get-name {
 	background: #FF803E;
-	min-height: 225px;
 }
 .get-name-form {
 	margin: 30px auto;
@@ -108,8 +107,15 @@ header h1 {
 }
 .welcome .results {
 	padding: 25px 0;
-	background-color: rgba(255,255,255,.2);
-	border-radius: 5px;
+	-webkit-transition: all linear 0.2s;
+	-moz-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  line-height: 20px;
+  opacity: 1;
+}
+.welcome .results.ng-hide {
+	line-height: 0;
+  opacity: 0;
 }
 .welcome p {
 	font-size: 2em;
@@ -125,9 +131,16 @@ header h1 {
   line-height: 20px;
   opacity: 1;
 }
-.rock-paper.scissors.ng-hide {
+.rock-paper-scissors.ng-hide {
 	line-height: 0;
   opacity: 0;
+}
+.rock-paper-scissors h2 {
+	font-size: 2em;
+	color: #19B2AB;
+}
+.rock-paper-scissors h2 small a {
+	color: #19B2AB;
 }
 .rock-paper-scissors ul {
 	margin: 0;
